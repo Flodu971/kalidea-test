@@ -97,7 +97,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/bootstrap-4.5.3-dist/css/bootstrap.css",
+              "src/assets/font-awesome-4.7.0/css/font-awesome.css"
             ],
             "scripts": []
           }
