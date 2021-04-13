@@ -10,6 +10,9 @@ import { LoadingComponent } from './loading/loading.component';
     FormFieldComponent,
     LoadingComponent
   ],
+  exports: [
+    LoadingComponent
+  ],
   imports: [
     CommonModule
   ]
