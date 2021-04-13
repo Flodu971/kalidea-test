@@ -10,6 +10,7 @@ import { UserService } from "../../user.service";
 })
 export class LogoutComponent implements OnDestroy {
   subscription: Subscription | undefined;
+  loading = false;
 
   constructor(private readonly router: Router,
               private readonly userService: UserService) { }
@@ -24,12 +25,13 @@ export class LogoutComponent implements OnDestroy {
    * on logout
    */
   logout(): void {
+    this.loading = true;
     this.subscription = this.userService.logout().subscribe(() => {
-      this.router.navigate(['/home']).then(nav => {
-        console.log(nav); // true if navigation is successful
-      }, err => {
-        console.log(err) // when there's an error
-      });
+      this.router.navigate(['/home']).then();
+    },(e) => {
+        this.loading = false;
+    }, () => {
+        this.loading = false;
     });
   }
 

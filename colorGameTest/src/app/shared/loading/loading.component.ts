@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss']
 })
-export class LoadingComponent implements OnInit {
-
+export class LoadingComponent implements OnChanges {
+  @Input() loading!: boolean;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.loading ? console.log('loading ', this.loading) : console.log('not loading ', this.loading);
   }
 
 }
