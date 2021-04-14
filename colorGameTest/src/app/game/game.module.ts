@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NewComponent } from './new/new.component';
 import { CaseComponent } from './case/case.component';
 import { RouterModule, Routes } from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
 
 export const routes: Routes = [
   {
@@ -23,7 +24,8 @@ export const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class GameModule { }
