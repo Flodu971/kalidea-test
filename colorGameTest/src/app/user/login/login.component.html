@@ -3,28 +3,8 @@
   <div *ngIf="error" class="alert alert-danger">Error: invalid credential</div>
 
   <form (ngSubmit)="validate()" [formGroup]="loginForm" class="w-100">
-    <div class="form-group">
-      <label for="login_email">Email</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">
-              <span class="fa fa-at"></span>
-            </span>
-        </div>
-        <input type="email" class="form-control" id="login_email" placeholder="Enter email" formControlName="email"></div>
-    </div>
-
-    <div class="form-group">
-      <label for="login_password">Password</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">
-              <span class="fa fa-lock"></span>
-            </span>
-        </div>
-        <input type="password" class="form-control" id="login_password" placeholder="Password" formControlName="password">
-      </div>
-    </div>
+    <app-form-field formControlName="email.formControlName" id="email.id" title="email.title" icon="email.icon"></app-form-field>
+    <app-form-field formControlName="pwd.formControlName" id="pwd.id" title="pwd.title" icon="pwd.icon"></app-form-field>
     <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
   </form>
 
