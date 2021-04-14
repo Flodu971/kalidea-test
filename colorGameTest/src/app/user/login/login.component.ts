@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   error = false;
   subscription: Subscription | undefined;
   @Input() user: User | undefined;
+  email!: { formControlName: string,  icon: string; id: string; title: string};
+  pwd!: { formControlName: string; icon: string; id: string; title: string };
 
   constructor(private readonly userService: UserService,
               private readonly router: Router,
@@ -23,6 +25,20 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.initFormControl();
+    this.email = {
+      'formControlName' : 'email',
+      'id': 'email',
+      'title' : 'Email',
+      'icon' : 'fa-at',
+    };
+
+    this.pwd = {
+      'formControlName' : 'password',
+      'id': 'password',
+      'title' : 'Password',
+      'icon' : 'fa-lock'
+    };
+    console.log(this.pwd.formControlName)
   }
 
   /**
@@ -57,5 +73,6 @@ export class LoginComponent implements OnInit {
       this.error = true;
     });
   }
+
 
 }

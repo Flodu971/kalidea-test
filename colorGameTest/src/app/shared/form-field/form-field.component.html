@@ -1,1 +1,20 @@
-<p>form-field works!</p>
+<div class="form-group">
+  <label for="{{id}}">{{title}}</label>
+  <div class="input-group">
+    <div class="input-group-prepend">
+            <span class="input-group-text">
+              <span class="fa {{icon}}"></span>
+            </span>
+    </div>
+    <input formControlName="{{formControlName}}" id="{{id}}" title="{{title}}" type="{{type}}" class="form-control rounded-right">
+  </div>
+
+ <!-- <div class="invalid-feedback">
+    <ul>
+      <li>
+        clé de l'erreur: valeur de l'erreur ( par exemple "required: true" )
+      </li>
+    </ul>
+  </div>
+</div>-->
+</div>
