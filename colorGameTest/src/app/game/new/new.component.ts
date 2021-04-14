@@ -40,14 +40,12 @@ export class NewComponent implements OnInit {
     this.table = [];
     const rows: number = this.gameForm.value.rows;
     const cols: number = this.gameForm.value.cols;
-    console.log(rows, cols);
 
-    for (let i = 0; i < rows; ++i) {
-      this.table[i] = [];
-      for (let j = 0; j < cols; ++j) {
-        this.table[i][j] = ``;
+    for (let x = 0; x < rows; ++x) {
+      this.table[x] = [];
+      for (let y = 0; y < cols; ++y) {
+        this.table[x][y] = ``;
       }
-      console.log(this.table);
     }
   }
 

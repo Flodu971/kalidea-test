@@ -32,4 +32,14 @@
       </div>
     </div>
   </form>
+
+  <table>
+    <tbody>
+    <tr *ngFor="let x of table; let row = index;">
+      <td *ngFor="let y of x; let col = index;" >
+        <app-case [color]="table[row][col]"></app-case>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
